@@ -102,8 +102,7 @@ header
     display: flex;
     align-items: center;
 }
-/*Tablet*/
-@media only screen and (min-width: 600px)
+@media only screen and (min-width: 600px) /*Tablet*/
 {    
     ul.listed
     {
@@ -153,8 +152,7 @@ header
         padding: 0 1vw;
     }
 }
-/*Szgép*/
-@media only screen and (min-width: 768px)
+@media only screen and (min-width: 768px) /*Szgép*/
 {
     body
     {        
