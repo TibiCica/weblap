@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: Minecraft;
+    src: url("MinecraftRegular-Bmg3.otf");
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(198, 198, 198);
+    font-family: Arial, Helvetica, sans-serif;
+}
+article
+{
+    padding: 1vh 1vw;
+    margin: 1vh 1vw;
+    video
+    {
+        width: 90%;
+        margin-left: 5%;
+    }
+    p
+    {
+        text-indent: 1vw;
+        text-align: justify;
+        &.listed
+        {
+            padding-left: 2em;
+        }
+    }
+    h1::first-letter, h3::first-letter
+    {
+        font-size: larger;
+    }
+    h1
+    {
+        font-size: 3em;
+        text-align: center;
+    }
+    table
+    {
+        width: 100%;
+        caption-side: bottom;
+    }
+}
+header
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    nav
+    {
+        &.menu
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 50%;
+            ul
+            {
+                padding-inline-start: 0;
+                margin-bottom: 0;
+                li
+                {
+                    list-style: none;
+                    display: inline-block;
+                    background-color: #aaa;
+                    border-left: 2px solid #ddd;
+                    border-top: 2px solid #ddd;
+                    border-right: 2px solid #999;
+                    border-bottom: 2px solid #999;
+                    font-family: Minecraft;
+                    font-size: 3vw;
+                    width: 32%;
+                    height: 4vh;
+                    text-align: center;
+                    align-content: center;
+                    padding: 0;
+                    &:hover
+                    {
+                        border-right: 2px solid #ddd;
+                        border-bottom: 2px solid #ddd;
+                        border-left: 2px solid #999;
+                        border-top: 2px solid #999;
+                    }
+                }
+            }
+            a
+            {
+                text-decoration: none;
+                color: white;
+                text-shadow: 2px 2px black;
+            }
+        }
+    }
+}
+#fejlec
+{
+    background-color: #313;
+    padding: 1vw 1vh;
+    display: flex;
+    align-items: center;
+}
+/*Tablet*/
+@media only screen and (min-width: 600px)
+{    
+    ul.listed
+    {
+        transform: translateY(-8px);
+        li
+        {
+            padding-bottom: 8px;
+        }
+    }
+    #fejlec
+    {
+        padding: 0;
+        background-size: auto 18vh;
+        height: 18vh;
+        background-repeat: repeat-x;
+        justify-content: space-between;
+        background-image: url("képek/háttér/header0.png");
+        width: 100%;
+        align-items: end;
+        position: static;
+    }
+    article
+    {
+        margin: 1vh 3vw;
+        background-color: #eee;
+        border: #ccc solid 4px;
+        border-radius: 13px;
+        box-shadow: -0px -0px 1px 2px rgba(0, 0, 0, 0.3);
+        video
+        {
+            width: 80%;
+            margin-left: 10%;
+        }
+        h1
+        {
+            margin-top: 0;
+        }
+        p
+        {            
+            padding-left: 3vw;
+        }
+    }
+    nav.menu ul li 
+    {
+        width: 16vw;
+        height: 5vh;
+        padding: 0 1vw;
+    }
+}
+/*Szgép*/
+@media only screen and (min-width: 768px)
+{
+    body
+    {        
+    background-image: url(képek/háttér/side.png),url(képek/háttér/side2.png);
+    background-repeat: repeat-y, repeat-y;
+    background-position: 0 0, 8vw 0;
+    background-size: 8vw 40vh,1vw auto;
+    }
+    header
+    {
+        &#fejlec
+        {
+            padding-left: 8vw;
+            background-color: #888;
+            height: 20vh;
+            background-image: url(képek/háttér/header0.png), url(képek/háttér/side.png);
+            background-repeat: repeat-x, repeat-y;
+            background-size: auto 18vh, 8vw 40vh;
+            nav.menu 
+            {
+                &.jobboldal
+                {
+                    padding-right: 2vw;
+                    ul li
+                    {
+                        margin-left: 3vw;
+                    }
+                }
+                &.baloldal
+                {
+                    margin-left:0.55vw;
+                    ul li
+                    {
+                        margin-right: 3vw;
+                    }
+                }
+                ul
+                {
+                    li
+                    {
+                        border: 0;
+                        position: relative;
+                        background-image: url("képek/háttér/button2.png");
+                        background-repeat: repeat-x;
+                        background-position: center;
+                        text-align: center;
+                        background-size: 5vw 10vh;
+                        height: 10vh;
+                        width: 10vw;
+                        background-color: transparent;
+                        padding: 2vh 0 0 0.5vw;
+                        transition: all 0.3s ease 0s;
+                        &::before
+                        {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            transform: translateX(-47.5%);
+                            width: 1vw;
+                            height: 10vh;
+                            background-image: url("képek/háttér/button1.png");
+                            background-size: 0.5vw 10vh;
+                            background-repeat: no-repeat;
+                        }
+                        &::after
+                        {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            transform: translateX(100%);
+                            height: 10vh;
+                            width: 1vw;
+                            background-image: url("képek/háttér/button3.png");
+                            background-repeat: no-repeat;
+                            background-size: 0.5vw 10vh;
+                        }
+                        &:hover
+                        {
+                            border: 0;
+                        }
+                        a
+                        {
+                            transition: all 0.3s ease 0s;
+                            &:hover
+                            {
+                                color: lightgray;
+                            }
+                        }
+                    }
+                }
+                &.baloldal ul li
+                {
+                    &:not(:first-child):hover
+                    {
+                        transform: translate(1vh, 1vh);
+                    }
+                    &:first-child::before
+                    {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        transform: translateX(-50%);
+                        height: 10vh;
+                        background-image: url("képek/háttér/button0.png");
+                        background-repeat: no-repeat;
+                        background-size: 1vw 10.3vh;
+                    }
+            
+                }
+                &.jobboldal ul li:hover
+                {
+                    transform: translate(-1vh, 1vh);
+                }
+            
+            }
+        }
+    }
+    article
+    {
+        margin: 1vh 3vw 1vh 11vw;
+    }
+}
