@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Minecraft</title>
-    <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php"></form>
+    <link rel="icon" type="image/x-icon" href="képek/icon.png">
 </head>
 <body>
     <header id="fejlec">
@@ -24,8 +24,27 @@
             </ul>
         </nav>
     </header>
-    <article></article>
+    <article>
+        <img src="képek/háttér/button1.png" alt="" id="asd">
+        <input type="button" value="gomb" id="gomb">
+        <select name="" id="egy">
+            <option value="hostile.txt">hostile</option>
+            <option value="pacifistic.txt">pacifistic</option>
+            <option value="passive.txt">passive</option>
+        </select>
+        <select name="" id="ketto" multiple>
+            <option value="hostile.txt">hostile</option>
+            <option value="pacifistic.txt">pacifistic</option>
+            <option value="passive.txt">passive</option>
+        </select>
+    </article>
     <script>
+        
+        document.getElementById("gomb").addEventListener("click", changepicture);
+        function changepicture()
+        {
+            document.getElementById("asd").src="képek/háttér/button2.png";
+        }
     </script>
 </body>
 </html>

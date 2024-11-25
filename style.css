@@ -1,15 +1,23 @@
-* {
+*
+{
     box-sizing: border-box;
 }
-@font-face {
+@font-face
+{
     font-family: Minecraft;
     src: url("MinecraftRegular-Bmg3.otf");
 }
-body {
+body
+{
     margin: 0;
     padding: 0;
     background-color: rgb(198, 198, 198);
     font-family: Arial, Helvetica, sans-serif;
+}
+hr
+{
+    width: 80%;
+    color: #444;
 }
 article
 {
@@ -43,6 +51,10 @@ article
         width: 100%;
         caption-side: bottom;
     }
+    select
+    {
+        
+    }
 }
 header
 {
@@ -55,10 +67,13 @@ header
         {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            flex-wrap: wrap;
             width: 50%;
             ul
             {
+                flex-wrap: wrap;
+                display: flex;
+                justify-content: space-around;
                 padding-inline-start: 0;
                 margin-bottom: 0;
                 li
@@ -104,6 +119,12 @@ header
 }
 @media only screen and (min-width: 600px) /*Tablet*/
 {    
+    hr
+    {
+        width: 50%;
+        color: #444;
+        margin: 3vh auto;
+    }
     ul.listed
     {
         transform: translateY(-8px);
@@ -176,17 +197,25 @@ header
                 &.jobboldal
                 {
                     padding-right: 2vw;
-                    ul li
+                    ul
                     {
-                        margin-left: 3vw;
+                        justify-content: flex-end;
+                        li
+                        {
+                            margin-left: 3vw;
+                        }
                     }
                 }
                 &.baloldal
                 {
                     margin-left:0.55vw;
-                    ul li
+                    ul
                     {
-                        margin-right: 3vw;
+                        justify-content: flex-start;
+                        li
+                        {
+                            margin-right: 3vw;
+                        }
                     }
                 }
                 ul
