@@ -14,8 +14,8 @@ function changepicture() {
         const h1 = document.createElement("h1");
         h1.innerHTML=option.text;
         div.appendChild(h1);
-        const p = document.createElement("h1");
-        p.innerHTML=option.text;
+        const p = document.createElement("p");
+        p.innerHTML="asd";
         div.appendChild(p);
         document.getElementById("mobs").appendChild(div);
     });
