@@ -19,6 +19,25 @@ hr
     width: 80%;
     color: #444;
 }
+div
+{
+    &#mobs
+    {
+        padding: 1vh 1vw;
+        margin: 1vh 1vw;
+        div
+        {
+            &.mob
+            {
+                padding: 1vh 1vw;
+                margin: 1vh 1vw;
+                background-color: #eee;
+                border: #ccc solid 4px;
+                box-shadow: -0px -0px 1px 2px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+}
 article
 {
     padding: 1vh 1vw;
@@ -50,10 +69,6 @@ article
     {
         width: 100%;
         caption-side: bottom;
-    }
-    select
-    {
-        
     }
 }
 header
@@ -117,8 +132,51 @@ header
     display: flex;
     align-items: center;
 }
+footer
+{
+    bottom: 0;
+    width: 100%;
+    height: 16vh;
+    background-color: #313;
+    background-repeat: repeat-x;
+    background-image: url(képek/háttér/button2.png);
+    background-size: 5vw 10vh;
+}
 @media only screen and (min-width: 600px) /*Tablet*/
 {    
+    div
+    {
+        &#mobs
+        {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+            transition: all 0.3s ease 0s;
+            div
+            {
+                &.mob
+                {
+                    width: 40%;
+                    img
+                    {
+                        width: 45%;
+                        float: left;
+                    }
+                    h1
+                    {
+                        font-family: Minecraft;
+                        margin: 1vh 1vw;
+                        background-color: #777;
+                        border: #666 solid 4px;
+                        text-align: center;
+                        width: 40%;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
     hr
     {
         width: 50%;
@@ -172,8 +230,16 @@ header
         height: 5vh;
         padding: 0 1vw;
     }
+    div#mobs
+    {
+        margin: 1vh 3vw;
+        background-color: #eee;
+        border: #ccc solid 4px;
+        border-radius: 13px;
+        box-shadow: -0px -0px 1px 2px rgba(0, 0, 0, 0.3);
+    }
 }
-@media only screen and (min-width: 768px) /*Szgép*/
+@media only screen and (min-width: 768px) /*PC*/
 {
     body
     {        
@@ -181,6 +247,13 @@ header
     background-repeat: repeat-y, repeat-y;
     background-position: 0 0, 8vw 0;
     background-size: 8vw 40vh,1vw auto;
+    }
+    div
+    {
+        &#mobs
+        {
+            margin: 1vh 3vw 1vh 11vw;
+        }
     }
     header
     {
