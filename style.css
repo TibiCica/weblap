@@ -29,8 +29,33 @@ hr
     width: 80%;
     color: #444;
 }
+table
+{
+    &#intro
+    {
+        width: 100%;
+        td
+        {
+            width: 33%;
+            text-align: center;
+            img
+            {
+                height: 13vh;
+            }
+        }
+    }
+}
 div
 {
+    .events
+    {
+        width: 90%;
+        padding: 50px 5px;
+        margin: 15px 5px;
+        width: 100%;
+        background-image: url("képek/háttér/button2.png");
+        background-repeat: repeat-x;
+    }
     &#lava
     {
         table
@@ -58,6 +83,12 @@ div
         {
             border-bottom: 6px solid #666;
         }
+    }
+    &#bbody
+    {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
     }
     &#mobs
     {
@@ -92,7 +123,6 @@ div
                     }
                     h1
                     {
-                        font-family: Minecraft;
                         margin: 1vh 1vw;
                         background-color: #777;
                         border: #666 solid 4px;
@@ -103,6 +133,10 @@ div
             }
         }
     }
+}
+div#bbody
+{
+    flex-grow: 1;
 }
 article
 {
@@ -118,26 +152,24 @@ article
     {
         text-indent: 1vw;
         text-align: justify;
-        &.listed
-        {
-            padding-left: 2em;
-        }
-    }
-    h1::first-letter, h3::first-letter
-    {
-        font-size: larger;
-    }
-    h1
-    {
-        font-size: 3em;
-        text-align: center;
-        font-family: Minecraft;
     }
     table
     {
-        width: 100%;
         caption-side: bottom;
     }
+}
+h1::first-letter, h2::first-letter
+{
+    font-size: larger;
+}
+h1, h2
+{
+    text-align: center;
+    font-family: Minecraft;
+}
+h1
+{
+    font-size: 3em;
 }
 header
 {
@@ -227,6 +259,12 @@ footer
     }
     div
     {
+        &#history
+        {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
         &#mobs
         {
             flex-direction: row;
@@ -249,7 +287,6 @@ footer
                     }
                     h1
                     {
-                        font-family: Minecraft;
                         margin: 1vh 1vw;
                         background-color: #777;
                         border: #666 solid 4px;
@@ -289,11 +326,6 @@ footer
     }
     article
     {
-        margin: 1vh 3vw;
-        background-color: #eee;
-        border: #ccc solid 4px;
-        border-radius: 13px;
-        box-shadow: -0px -0px 1px 2px rgba(0, 0, 0, 0.3);
         video
         {
             width: 80%;
@@ -303,16 +335,20 @@ footer
         {
             margin-top: 0;
         }
-        p
-        {            
-            padding-left: 3vw;
-        }
     }
     nav.menu ul li 
     {
         width: 16vw;
         height: 5vh;
         padding: 0 1vw;
+    }
+    div
+    {
+    .events
+    {
+        background-image: none;
+        padding: 10px 5px;
+        margin: 15px 5px;
     }
     .general
     {
@@ -321,6 +357,7 @@ footer
         border: #ccc solid 4px;
         border-radius: 13px;
         box-shadow: -0px -0px 1px 2px rgba(0, 0, 0, 0.3);
+    }
     }
 }
 
@@ -333,13 +370,50 @@ footer
     background-image: url(képek/háttér/side.png),url(képek/háttér/side2.png);
     background-repeat: repeat-y, repeat-y;
     background-position: 0 0, 8vw 0;
-    background-size: 8vw 40vh,1vw auto;
+    background-size: 8% 40vh,1vw auto;
     }
     div
     {
+        
+    .events
+    {
+        width: 45%;
+        padding: 10px 5px;
+        margin: 15px 5px;
+        transition: all 0.3s ease 0s;
+        &:hover
+        {
+            transform:scale(105%,105%);
+            box-shadow: #222 5px 5px;
+        }
+    }
         &#mobs
         {
             margin: 1vh 3vw 1vh 11vw;
+        }
+        &#bbody
+        {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            div#leftie
+            {
+                width: 8%;
+                height: 100%;
+                aside
+                {
+                    width: 85%;
+                    margin-left: 1vh;
+                }
+            }
+            div#rightie
+            {
+                width: 90%;
+                float: right;
+                right: 0;
+            }
         }
     }
     header
@@ -461,13 +535,5 @@ footer
             
             }
         }
-    }
-    article
-    {
-        margin: 1vh 3vw 1vh 11vw;
-    }
-    div#lava
-    {
-        margin-left: 11vw;
     }
 }
