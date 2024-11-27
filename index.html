@@ -7,7 +7,7 @@
     <title>Minecraft</title>
     <link rel="icon" type="image/x-icon" href="képek/icon.png">
 </head>
-<body>
+<body onload="cave(10)">
     <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php"></form>
     <header id="fejlec">
         <nav class="menu baloldal">
@@ -76,6 +76,7 @@
         </ul>
         <video src="videók/Trailer.mp4" controls autoplay muted>Your browser does not support video playback, but you can watch the unofficial trailer <a href="https://www.youtube.com/watch?v=cdULRac04Ag">here</a></video>
         </article>
+        <div id="lava"></div>
         <footer></footer>
     <script src="script.js">
     </script>
