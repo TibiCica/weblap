@@ -7,7 +7,7 @@
     <title>Minecraft</title>
     <link rel="icon" type="image/x-icon" href="képek/icon.png">
 </head>
-<body>
+<body onload="changepicture()">
     <header id="fejlec">
         <nav class="menu baloldal">
             <ul>
@@ -48,44 +48,64 @@
                 </tr>
             </table>
         
+            <hr>
         <h2>Passive Mobs</h2>
         <p>
             Passive mobs are gentle creatures that have no quarrel with you. Their reaction to a player might vary (some may run away if they spot you) but the common denominator for this group of mobs is that they will never attack you – even if you were to attack them. Many of these mobs can also be tamed or bred if certain conditions are met, allowing you to keep them as pets, or as sources for food production. To do that, you usually feed the mob something that it likes, such as wheat, carrots, or even seaweed.
         </p>
-        
+        <hr>
         <h2>Hostile Mobs</h2>
         <p>
             Hostile mobs, on the other hand, won't ever be your best buddies. On the contrary, they will attack you if given the opportunity. Spotting you is usually enough, and if you find yourself head-to-head with one of these foes, you can either run away from it, defeat it, or if you're creative, lure it into some kind of trap! The trick is to spot them first, and you can tell pretty quickly whether it's a mean mob or not. If not by their often-creepy sounds or even monster-like looks, they will come at you. There are many different approaches you can take when dealing with them, but don't try to reason with a hostile mob – many have tried, with little success.
         </p>
         
+        <hr>
         <h2>Neutral Mobs</h2>
         <p>
             Neutral mobs, our last category, is something of a mix between the two previous groups. They are usually passive – but can quickly change their behavior to hostile if certain conditions are met, which will prompt them to attack the player. The criteria can be anything from hitting them, looking them in the eye, or standing too close to their children. Like passive mobs, many neutral mobs can be both bred and tamed. In this case, they might even turn their attacks against the player's opponents.
         </p>
         
-                
-                <select name="" id="mobbinos" multiple>
-                    <option value="0">Zombified Piglin</option>
-                    <option value="1">Husk</option>
-                    <option value="2">Zombie</option>
-                    <option value="3">Villager</option>
-                    <option value="4">Wolf</option>
-                    <option value="5">Pig</option>
-                    <option value="6">Enderman</option>
-                    <option value="7">Shulker</option>
-                    <option value="8">Slime</option>
-                    <option value="9">Silverfish</option>
-                    <option value="10">Skeleton</option>
-                    <option value="11">Hoglin</option>
-                    <option value="12">Guardian</option>
-                    <option value="13">Dolphin</option>
-                    <option value="14">Llama</option>
-                    <option value="15">Herobrine</option>
-                </select>
+        <hr>
+                <table id="mobsel">
+                    <tr>
+                        <td><input type="radio" name="mobselect" id="itself" onclick="mobsel()"></td>
+                        <td><input type="radio" name="mobselect" id="world" onclick="mobsel()"></td>
+                        <td><input type="radio" name="mobselect" id="search" onclick="mobsel()"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="" id="mobbinos" multiple disabled>
+                                <option value="0">Zombified Piglin</option>
+                                <option value="1">Husk</option>
+                                <option value="2">Zombie</option>
+                                <option value="3">Villager</option>
+                                <option value="4">Wolf</option>
+                                <option value="5">Pig</option>
+                                <option value="6">Enderman</option>
+                                <option value="7">Shulker</option>
+                                <option value="8">Slime</option>
+                                <option value="9">Silverfish</option>
+                                <option value="10">Skeleton</option>
+                                <option value="11">Hoglin</option>
+                                <option value="12">Guardian</option>
+                                <option value="13">Dolphin</option>
+                                <option value="14">Llama</option>
+                                <option value="15">Herobrine</option>
+                            </select></td>
+                        <td>
+                            <select name="" id="ZaWarudo" multiple disabled>
+                                <option value="Overworld">Overworld</option>
+                                <option value="Nether">Nether</option>
+                                <option value="End">End</option>
+                            </select></td>
+                        <td><input type="text" name="" id="searcher" disabled></td>
+                    </tr>
+                </table>
+                <hr>
             </article>
+            <div id="mobs" class="general">
+            </div>
         </div>
-    </div>
-    <div id="mobs" class="general">
     </div>
     <footer></footer>
     <script src="script.js">

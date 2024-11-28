@@ -1,8 +1,55 @@
 
 document.getElementById("mobbinos").addEventListener("change", changepicture);
+document.getElementById("ZaWarudo").addEventListener("change", sel2);
+document.getElementById("searcher").addEventListener("keyup", sel3);
+
+function mobsel()
+{
+    if (document.getElementById("itself").checked)
+        {
+        document.getElementById("mobbinos").disabled=false;
+        document.getElementById("ZaWarudo").disabled=true;
+        document.getElementById("searcher").disabled=true;
+    }
+    else if (document.getElementById("world").checked)
+        {
+        document.getElementById("mobbinos").disabled=true;
+        document.getElementById("ZaWarudo").disabled=false;
+        document.getElementById("searcher").disabled=true;
+    }
+    else
+    {
+        document.getElementById("mobbinos").disabled=true;
+        document.getElementById("ZaWarudo").disabled=true;
+        document.getElementById("searcher").disabled=false;
+    }
+}
 
 function changepicture() {
     document.getElementById("mobs").innerHTML = "";
+    const div = document.createElement("div");
+    div.className = "mob";
+    const img = document.createElement("img");
+    img.src = "képek/mobs/Player.webp";
+    img.alt = "Player";
+    img.id = "creature";
+    div.appendChild(img);
+    const h1 = document.createElement("h1");
+    h1.innerHTML="Player";
+    div.appendChild(h1);
+    const ddiv = document.createElement("div");
+    ddiv.style.width="45%";
+    ddiv.style.float="right";
+    ddiv.style.margin=0;
+    ddiv.className="general";
+    ddiv.innerHTML="HP: <br>";
+    for (i=1; i<=20;i++)
+        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+    ddiv.innerHTML+="<br>Atk: <br>";
+    for (i=1; i<=1;i++)
+        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+    div.appendChild(ddiv);
+    document.getElementById("mobs").appendChild(div);
     const selectElement = document.getElementById("mobbinos");
     Array.from(selectElement.selectedOptions).forEach(option => {
         const div = document.createElement("div");
@@ -32,6 +79,132 @@ function changepicture() {
             ddiv.innerHTML+=" None";
         div.appendChild(ddiv);
         document.getElementById("mobs").appendChild(div);
+    });
+}
+
+function sel2()
+{
+    document.getElementById("mobs").innerHTML = "";
+    const div = document.createElement("div");
+    div.className = "mob";
+    const img = document.createElement("img");
+    img.src = "képek/mobs/Player.webp";
+    img.alt = "Player";
+    img.id = "creature";
+    div.appendChild(img);
+    const h1 = document.createElement("h1");
+    h1.innerHTML="Player";
+    div.appendChild(h1);
+    const ddiv = document.createElement("div");
+    ddiv.style.width="45%";
+    ddiv.style.float="right";
+    ddiv.style.margin=0;
+    ddiv.className="general";
+    ddiv.innerHTML="HP: <br>";
+    for (i=1; i<=20;i++)
+        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+    ddiv.innerHTML+="<br>Atk: <br>";
+    for (i=1; i<=1;i++)
+        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+    div.appendChild(ddiv);
+    document.getElementById("mobs").appendChild(div);
+
+
+    const SelElem = document.getElementById("ZaWarudo");
+    mobs.forEach(mob => {
+        Array.from(SelElem.selectedOptions).every(dim => {
+            if (mob.dimension.includes(dim.value))
+            {
+                const div = document.createElement("div");
+                div.className = "mob";
+                const img = document.createElement("img");
+                img.src = mob.image;
+                img.alt = mob.name;
+                img.id = "creature";
+                div.appendChild(img);
+                const h1 = document.createElement("h1");
+                h1.innerHTML=mob.name;
+                div.appendChild(h1);
+                const ddiv = document.createElement("div");
+                ddiv.style.width="45%";
+                ddiv.style.float="right";
+                ddiv.style.margin=0;
+                ddiv.className="general";
+                ddiv.innerHTML="HP: <br>";
+                for (i=1; i<=20;i++)
+                    i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+                ddiv.innerHTML+="<br>Atk: <br>";
+                for (i=1; i<=1;i++)
+                    i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+                div.appendChild(ddiv);
+                document.getElementById("mobs").appendChild(div);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        })
+    });
+}
+
+function sel3()
+{
+    document.getElementById("mobs").innerHTML = "";
+    const div = document.createElement("div");
+    div.className = "mob";
+    const img = document.createElement("img");
+    img.src = "képek/mobs/Player.webp";
+    img.alt = "Player";
+    img.id = "creature";
+    div.appendChild(img);
+    const h1 = document.createElement("h1");
+    h1.innerHTML="Player";
+    div.appendChild(h1);
+    const ddiv = document.createElement("div");
+    ddiv.style.width="45%";
+    ddiv.style.float="right";
+    ddiv.style.margin=0;
+    ddiv.className="general";
+    ddiv.innerHTML="HP: <br>";
+    for (i=1; i<=20;i++)
+        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+    ddiv.innerHTML+="<br>Atk: <br>";
+    for (i=1; i<=1;i++)
+        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+    div.appendChild(ddiv);
+    document.getElementById("mobs").appendChild(div);
+
+
+    const Searched = document.getElementById("searcher");
+    mobs.forEach(mob => {
+        if (mob.name.toLowerCase().includes(Searched.value.toLowerCase()))
+        {
+                    const div = document.createElement("div");
+                    div.className = "mob";
+                    const img = document.createElement("img");
+                    img.src = mob.image;
+                    img.alt = mob.name;
+                    img.id = "creature";
+                    div.appendChild(img);
+                    const h1 = document.createElement("h1");
+                    h1.innerHTML=mob.name;
+                    div.appendChild(h1);
+                    const ddiv = document.createElement("div");
+                    ddiv.style.width="45%";
+                    ddiv.style.float="right";
+                    ddiv.style.margin=0;
+                    ddiv.className="general";
+                    ddiv.innerHTML="HP: <br>";
+                    for (i=1; i<=20;i++)
+                        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+                    ddiv.innerHTML+="<br>Atk: <br>";
+                    for (i=1; i<=1;i++)
+                        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+                    div.appendChild(ddiv);
+                    document.getElementById("mobs").appendChild(div);
+                
+        }
     });
 }
 
