@@ -25,8 +25,8 @@ function mobsel()
     }
 }
 
-function changepicture() {
-    document.getElementById("mobs").innerHTML = "";
+function addplayer()
+{
     const div = document.createElement("div");
     div.className = "mob";
     const img = document.createElement("img");
@@ -50,6 +50,11 @@ function changepicture() {
         i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
     div.appendChild(ddiv);
     document.getElementById("mobs").appendChild(div);
+}
+
+function changepicture() {
+    document.getElementById("mobs").innerHTML = "";
+    addplayer();
     const selectElement = document.getElementById("mobbinos");
     Array.from(selectElement.selectedOptions).forEach(option => {
         const div = document.createElement("div");
@@ -85,31 +90,7 @@ function changepicture() {
 function sel2()
 {
     document.getElementById("mobs").innerHTML = "";
-    const div = document.createElement("div");
-    div.className = "mob";
-    const img = document.createElement("img");
-    img.src = "képek/mobs/Player.webp";
-    img.alt = "Player";
-    img.id = "creature";
-    div.appendChild(img);
-    const h1 = document.createElement("h1");
-    h1.innerHTML="Player";
-    div.appendChild(h1);
-    const ddiv = document.createElement("div");
-    ddiv.style.width="45%";
-    ddiv.style.float="right";
-    ddiv.style.margin=0;
-    ddiv.className="general";
-    ddiv.innerHTML="HP: <br>";
-    for (i=1; i<=20;i++)
-        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
-    ddiv.innerHTML+="<br>Atk: <br>";
-    for (i=1; i<=1;i++)
-        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
-    div.appendChild(ddiv);
-    document.getElementById("mobs").appendChild(div);
-
-
+    addplayer();
     const SelElem = document.getElementById("ZaWarudo");
     mobs.forEach(mob => {
         Array.from(SelElem.selectedOptions).every(dim => {
@@ -151,29 +132,7 @@ function sel2()
 function sel3()
 {
     document.getElementById("mobs").innerHTML = "";
-    const div = document.createElement("div");
-    div.className = "mob";
-    const img = document.createElement("img");
-    img.src = "képek/mobs/Player.webp";
-    img.alt = "Player";
-    img.id = "creature";
-    div.appendChild(img);
-    const h1 = document.createElement("h1");
-    h1.innerHTML="Player";
-    div.appendChild(h1);
-    const ddiv = document.createElement("div");
-    ddiv.style.width="45%";
-    ddiv.style.float="right";
-    ddiv.style.margin=0;
-    ddiv.className="general";
-    ddiv.innerHTML="HP: <br>";
-    for (i=1; i<=20;i++)
-        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
-    ddiv.innerHTML+="<br>Atk: <br>";
-    for (i=1; i<=1;i++)
-        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
-    div.appendChild(ddiv);
-    document.getElementById("mobs").appendChild(div);
+    addplayer();
 
 
     const Searched = document.getElementById("searcher");
