@@ -7,6 +7,21 @@
     font-family: Minecraft;
     src: url("MinecraftRegular-Bmg3.otf");
 }
+@keyframes appear
+{
+    from
+    {
+        opacity: 0;
+        scale: 0.5;
+        transform: translateY(100%);
+    }
+    to
+    {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0);
+    }
+}
 body
 {
     margin: 0;
@@ -45,13 +60,40 @@ table
         }
     }
 }
+p
+{
+    margin: auto 2vw;
+    text-indent: 1vw;
+    text-align: justify;
+}
+#searcher
+{
+    transition: 2s;
+    width: 20%;
+    &:focus
+    {
+        width: 80%;
+    }
+}
+aside
+{
+    text-align: justify;
+    color: #ddd;
+    background-color: #444;
+    color:#999;
+    p
+    {
+        text-indent: 0;
+        margin: 1vh 1vw;
+    }
+}
 div
 {
     .events
     {
         width: 90%;
         padding: 50px 5px;
-        margin: 15px 5px;
+        margin: 15px 0px;
         width: 100%;
         background-image: url("képek/háttér/button2.png");
         background-repeat: repeat-x;
@@ -60,7 +102,7 @@ div
     {
         table
         {
-            width: 24wv;
+            margin: 2vw;
             border-collapse: collapse;
             background-image: url("képek/háttér/lava.png");
             background-size: cover;
@@ -94,6 +136,7 @@ div
     {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         flex-wrap: wrap;
         flex-direction: column;
         div
@@ -107,6 +150,9 @@ div
                 background-color: #eee;
                 border: #ccc solid 4px;
                 box-shadow: -0px -0px 1px 2px rgba(0, 0, 0, 0.3);
+                animation: appear linear;
+                animation-timeline: view();
+                animation-range: entry 10% cover 20%;
                 width: 90%;
                     img
                     {
@@ -148,11 +194,6 @@ article
         width: 90%;
         margin-left: 5%;
     }
-    p
-    {
-        text-indent: 1vw;
-        text-align: justify;
-    }
     table
     {
         caption-side: bottom;
@@ -191,6 +232,7 @@ header
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
     nav
     {
         &.menu
@@ -222,7 +264,7 @@ header
                     text-align: center;
                     align-content: center;
                     padding: 0;
-                    &:hover
+                    &:hover, &#active
                     {
                         border-right: 2px solid #ddd;
                         border-bottom: 2px solid #ddd;
@@ -236,6 +278,7 @@ header
                 text-decoration: none;
                 color: white;
                 text-shadow: 2px 2px black;
+                font-weight: normal;
             }
         }
     }
@@ -259,12 +302,25 @@ footer
     width: 100%;
     height: 16vh;
     background-color: #313;
-    background-repeat: repeat-x;
-    background-image: url(képek/háttér/button2.png);
-    background-size: auto 10vh;
+    background-repeat: repeat-x, repeat;
+    background-image: url(képek/háttér/button2.png), url(képek/háttér/dirt.png);
+    background-size: auto 10vh, auto 10vh;
+    position: relative;
 }
-
-
+    a
+    {
+        text-decoration: none;
+        color: green;
+        font-weight: bold;
+        &:hover
+        {
+            color: lime;
+        }
+        &:visited
+        {
+            color: violet;
+        }
+    }
 
 @media only screen and (min-width: 600px) /*Tablet*/
 {    
@@ -283,6 +339,7 @@ footer
         &#mobs
         {
             flex-direction: row;
+            align-items: stretch;
             div
             {
                 &.mob
@@ -311,6 +368,17 @@ footer
                     }
                 }
             }
+        }
+    }
+    aside
+    {
+        color: #222;
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 5% cover 20%;
+        a:visited
+        {
+            color: purple;
         }
     }
     hr
@@ -364,6 +432,9 @@ footer
         background-image: none;
         padding: 10px 5px;
         margin: 15px 5px;
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 10% cover 30%;
     }
     .general
     {
@@ -374,18 +445,44 @@ footer
         box-shadow: -0px -0px 1px 2px rgba(0, 0, 0, 0.3);
     }
     }
+    
+.slick-slide
+{width: 100%;}
 }
-
 
 
 @media only screen and (min-width: 768px) /*PC*/
 {
+    footer::before
+    {
+        content: "";
+        position: absolute;
+        left: 0vw;
+        top: -10vh;
+        width: 12vw;
+        height: 10vh;
+        background-image: url("képek/háttér/button2.png");
+        background-size: 5vw 10vh;
+        background-repeat: repeat-x;
+    }
+    footer::after
+    {
+        content: "";
+        position: absolute;
+        left: 12vw;
+        top: -10vh;
+        height: 10vh;
+        width: 1vw;
+        background-image: url("képek/háttér/button3.png");
+        background-size: 0.5vw 10vh;
+        background-repeat: no-repeat;
+    }
     body
     {        
-    background-image: url(képek/háttér/side.png),url(képek/háttér/side2.png);
-    background-repeat: repeat-y, repeat-y;
-    background-position: 0 0, 8vw 0;
-    background-size: 8% 40vh,1vw auto;
+    background-image: url(képek/háttér/side.png),url(képek/háttér/side2.png),url(képek/háttér/side.png),url(képek/háttér/side.png);
+    background-repeat: repeat-y, repeat-y, repeat-y, repeat-y;
+    background-position: 0 6vh, 12vw 0, 4vw 16vh, 8vw 0;
+    background-size: 4vw 40vh,0.5vw auto, 4vw 40vh, 4vw 40vh;
     }
     div
     {
@@ -422,17 +519,17 @@ footer
             width: 100%;
             div#leftie
             {
-                width: 8%;
+                width: 10vw;
                 height: 100%;
                 aside
                 {
-                    width: 85%;
+                    width: 100%;
                     margin-left: 1vh;
                 }
             }
             div#rightie
             {
-                width: 90%;
+                width: 88%;
                 float: right;
                 right: 0;
             }
@@ -442,12 +539,12 @@ footer
     {
         &#fejlec
         {
-            padding-left: 8vw;
+            padding-left: 12vw;
             background-color: #888;
             height: 20vh;
             background-image: url(képek/háttér/header0.png), url(képek/háttér/side.png);
             background-repeat: repeat-x, repeat-y;
-            background-size: auto 18vh, 8vw 40vh;
+            background-size: auto 18vh, 12vw 40vh;
             nav.menu 
             {
                 &.jobboldal
@@ -546,7 +643,7 @@ footer
                         height: 10vh;
                         background-image: url("képek/háttér/button0.png");
                         background-repeat: no-repeat;
-                        background-size: 1vw 10.3vh;
+                        background-size: 0.5vw 10.3vh;
                     }
             
                 }
@@ -558,4 +655,57 @@ footer
             }
         }
     }
+
+
+    #searcher
+    {
+        transition: 5s;
+        width: 20%;
+        &:focus
+        {
+            width: 80%;
+        }
+    }
 }
+
+.slider {
+    width: 60vw;
+    min-width: 400px;
+    margin: 100px auto;
+}
+
+.slick-slide {
+    margin: 0px 5px;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.slider-nav {   
+.slick-slide img {
+    height: 10vh;
+}
+}
+
+    
+.slick-prev:before,
+.slick-next:before {
+    color: rgb(10, 131, 16);
+}
+
+.slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: .2;
+}
+
+.slick-active {
+    opacity: .5;
+}
+
+.slick-current {
+    opacity: 1;
+}
+
