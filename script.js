@@ -232,7 +232,7 @@ function mob (name, health, dmg, type, dimension)
     this.dmg = dmg;
     this.type = type;
     this.dimension = dimension;
-    this.image;
+    this.image =`képek/mobs/${name.replace(' ', '')}.webp`;
 }
 const mobs = [
     new mob("Zombified Piglin", 20, 8, "hostile", "Nether"),
@@ -252,6 +252,3 @@ const mobs = [
     new mob("Llama", 10, 3, "neutral", "Overworld"),
     new mob("Herobrine", 0, 0, "hostile", "Overworld Nether End")
 ];
-mobs.forEach(m => {
-    m.image=`képek/mobs/${m.name.replace(' ', '')}.webp`;
-});

@@ -58,7 +58,7 @@
         The primary dimension where players spawn. It's a diverse environment with forests, mountains, oceans, and caves. 
         Players gather resources, build structures, and prepare for further adventures.
     </p>
-    <section class="slider-for slider">
+    <section class="slider-for-overworld slider">
         <div><img src="képek/worlds/overworld/1200px-Overworld_1.webp" alt="kep1" title="kepcim1"></div>
         <div><img src="képek/worlds/overworld/15967381-image_l.jpg" alt="kep2" title="kepcim2"></div>
         <div><img src="képek/worlds/overworld/21w07a_Mineshaft.webp" alt="kep3" title="kepcim3"></div>
@@ -66,7 +66,7 @@
         <div><img src="képek/worlds/overworld/minecraft-cherry-grove-biome-blossom-trees.jpg" alt="kep5" title="kepcim5"></div>
         <div><img src="képek/worlds/overworld/Minecraft-Lush-Cave.avif" alt="kep6" title="kepcim6"></div>
     </section>
-    <section class="slider-nav slider">
+    <section class="slider-nav-overworld slider">
         <div><img src="képek/worlds/overworld/1200px-Overworld_1.webp" alt="kep1" title="kepcim1"></div>
         <div><img src="képek/worlds/overworld/15967381-image_l.jpg" alt="kep2" title="kepcim2"></div>
         <div><img src="képek/worlds/overworld/21w07a_Mineshaft.webp" alt="kep3" title="kepcim3"></div>
@@ -81,7 +81,7 @@
         A fiery, hostile dimension accessed through Nether portals. It features unique biomes, mobs, and resources like 
         Netherite and Blaze Rods, critical for progression in the game. Beware of lava and dangerous mobs like Ghasts and Piglins.
     </p>
-    <section class="slider-for slider">
+    <section class="slider-for-nether slider">
         <div><img src="képek/worlds/nether/images.jpg" alt="kep1" title="kepcim1"></div>
         <div><img src="képek/worlds/nether/Minecraft-Bastion-Remnant.avif" alt="kep2" title="kepcim2"></div>
         <div><img src="képek/worlds/nether/minecraft-nether-fortress.avif" alt="kep3" title="kepcim3"></div>
@@ -89,7 +89,7 @@
         <div><img src="képek/worlds/nether/TheNether.webp" alt="kep6" title="kepcim6"></div>
         <div><img src="képek/worlds/nether/u1YZRJt.jpg" alt="kep7" title="kepcim7"></div>
     </section>
-    <section class="slider-nav slider">
+    <section class="slider-nav-nether slider">
         <div><img src="képek/worlds/nether/images.jpg" alt="kep1" title="kepcim1"></div>
         <div><img src="képek/worlds/nether/Minecraft-Bastion-Remnant.avif" alt="kep2" title="kepcim2"></div>
         <div><img src="képek/worlds/nether/minecraft-nether-fortress.avif" alt="kep3" title="kepcim3"></div>
@@ -104,14 +104,14 @@
         A barren, otherworldly dimension where the Ender Dragon resides. Players must navigate floating islands and face 
         challenges to defeat the dragon and complete the game. Post-victory, players can explore End Cities and find Elytra for flight.
     </p>
-    <section class="slider-for slider">
+    <section class="slider-for-nether slider">
         <div><img src="képek/worlds/end/end-general.png" alt="kep1" title="kepcim1"></div>
         <div><img src="képek/worlds/end/End_City.webp" alt="kep2" title="kepcim2"></div>
         <div><img src="képek/worlds/end/The_End.webp" alt="kep3" title="kepcim3"></div>
         <div><img src="képek/worlds/end/The_End_-_Outer_Islands.webp" alt="kep4" title="kepcim4"></div>
         <div><img src="képek/worlds/end/What Is an End Ship in Minecraft.jpg" alt="kep5" title="kepcim5"></div>
     </section>
-    <section class="slider-nav slider">
+    <section class="slider-nav-nether slider">
         <div><img src="képek/worlds/end/end-general.png" alt="kep1" title="kepcim1"></div>
         <div><img src="képek/worlds/end/End_City.webp" alt="kep2" title="kepcim2"></div>
         <div><img src="képek/worlds/end/The_End.webp" alt="kep3" title="kepcim3"></div>
@@ -129,17 +129,81 @@
     <script src="script.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.slider-for').slick({
+            $('.slider-for-end').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
   fade: true,
-  asNavFor: '.slider-nav'
+  asNavFor: '.slider-nav-end'
 });
-$('.slider-nav').slick({
+$('.slider-nav-end').slick({
   slidesToShow: 5,
   slidesToScroll: 1,
-  asNavFor: '.slider-for',
+  asNavFor: '.slider-for-end',
+  dots: true,
+  arrows: false,
+  centerMode: true,
+  focusOnSelect: true,
+  responsive: [
+    {
+        breakpoint: 768,
+        settings: {
+            arrows: true,
+        }
+    },
+    {
+        breakpoint: 600,
+        settings: {
+            arrows: true,
+            slidesToShow: 3,
+            dots: false
+        }
+    }
+  ]
+});
+            $('.slider-for-nether').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav-nether'
+});
+$('.slider-nav-nether').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for-nether',
+  dots: true,
+  arrows: false,
+  centerMode: true,
+  focusOnSelect: true,
+  responsive: [
+    {
+        breakpoint: 768,
+        settings: {
+            arrows: true,
+        }
+    },
+    {
+        breakpoint: 600,
+        settings: {
+            arrows: true,
+            slidesToShow: 3,
+            dots: false
+        }
+    }
+  ]
+});
+            $('.slider-for-overworld').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav-overworld'
+});
+$('.slider-nav-overworld').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for-overworld',
   dots: true,
   arrows: false,
   centerMode: true,
