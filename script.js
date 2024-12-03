@@ -90,8 +90,6 @@ function sel3()
 {
     document.getElementById("mobs").innerHTML = "";
     addplayer();
-
-
     const Searched = document.getElementById("searcher");
     mobs.forEach(mob => {
         if (mob.name.toLowerCase().includes(Searched.value.toLowerCase()))
