@@ -32,7 +32,7 @@ function addplayer()
     const div = document.createElement("div");
     div.className = "mob";
     const img = document.createElement("img");
-    img.src = "képek/mobs/Player.webp";
+    img.src = "kepek/mobs/Player.webp";
     img.alt = "Player";
     img.id = "creature";
     div.appendChild(img);
@@ -46,10 +46,10 @@ function addplayer()
     ddiv.className="general";
     ddiv.innerHTML="HP: <br>";
     for (i=1; i<=20;i++)
-        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+        i%2==1 ? ddiv.innerHTML+='<img src="kepek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="kepek/heart.png" class="heart flipped">' ;
     ddiv.innerHTML+="<br>Atk: <br>";
     for (i=1; i<=1;i++)
-        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+        i%2==1 ? ddiv.innerHTML+='<img src="kepek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="kepek/heart.png" class="heart flipped">' ;
     div.appendChild(ddiv);
     document.getElementById("mobs").appendChild(div);
 }
@@ -100,6 +100,82 @@ function sel3()
     });
 }
 
+function calcdmg()
+{
+    hp = document.getElementById("scale").value;
+    document.getElementById("endmg").innerHTML=hp+"<br>";
+    for (i=1; i<=parseInt(hp);i++)
+        i%2==1 ? document.getElementById("endmg").innerHTML+='<img src="kepek/heart.png" class="heart">' :  document.getElementById("endmg").innerHTML+='<img src="kepek/heart.png" class="heart flipped">' ;
+}
+
+function checkquizz()
+{
+    summed=0;
+    if (document.getElementById("scale").value==7)
+    {
+        summed++;
+        document.getElementById("endmg").style.color="#0F0";
+    }
+    else
+    {
+        document.getElementById("endmg").style.color="#F00";
+    }
+    if (document.getElementById("hay0").checked)
+        {
+            summed++;
+            document.getElementById("hay0l").style.color="#0F0";
+        }
+        else if (document.getElementById("hay1").checked)
+        {
+            summed++;
+            document.getElementById("hay1l").style.color="#F00";
+        }
+        else if (document.getElementById("hay2").checked)
+        {
+            summed++;
+            document.getElementById("hay2l").style.color="#F00";
+        }
+        else if (document.getElementById("hay3").checked)
+        {
+            summed++;
+            document.getElementById("hay3l").style.color="#F00";
+        }
+        if (document.getElementById("numupdown").value==2014)
+        {
+            document.getElementById("numupdown").style.color="#0F0";
+            summed++;
+        }
+        else
+        {
+            document.getElementById("cname").style.color="#F00";
+        }
+        if (document.getElementById("cname").value=="Steve")
+        {
+            document.getElementById("cname").style.color="#0F0";
+            summed++;
+        }
+        else
+        {
+            document.getElementById("who").style.color="#F00";
+        }
+        if (document.getElementById("who").value==15)
+        {
+            document.getElementById("who").style.color="#0F0";
+            document.getElementById("pokemon").innerHTML="It's Herobrine!";
+            summed++;
+        }
+        else
+        {
+            document.getElementById("who").style.color="#F00";
+            document.getElementById("pokemon").innerHTML="It's not a pokemon you dumb f-";
+        }
+        if (document.getElementById("Java").checked && !document.getElementById("Oracle").checked && !document.getElementById("Anime").checked && document.getElementById("Bedrock").checked)
+        {
+            summed++;
+        }
+        alert(`Your score is ${summed}/6`)
+}
+
 function loadmob(mob)
 {
     const div = document.createElement("div");
@@ -119,10 +195,10 @@ function loadmob(mob)
     ddiv.className="general";
     ddiv.innerHTML="HP: <br>";
     for (i=1; i<=mob.health;i++)
-        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+        i%2==1 ? ddiv.innerHTML+='<img src="kepek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="kepek/heart.png" class="heart flipped">' ;
     ddiv.innerHTML+="<br>Atk: <br>";
     for (i=1; i<=mob.dmg;i++)
-        i%2==1 ? ddiv.innerHTML+='<img src="képek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="képek/heart.png" class="heart flipped">' ;
+        i%2==1 ? ddiv.innerHTML+='<img src="kepek/heart.png" class="heart">' :  ddiv.innerHTML+='<img src="kepek/heart.png" class="heart flipped">' ;
     div.appendChild(ddiv);
     document.getElementById("mobs").appendChild(div);
 }
@@ -232,7 +308,7 @@ function mob (name, health, dmg, type, dimension)
     this.dmg = dmg;
     this.type = type;
     this.dimension = dimension;
-    this.image =`képek/mobs/${name.replace(' ', '')}.webp`;
+    this.image =`kepek/mobs/${name.replace(' ', '')}.webp`;
 }
 const mobs = [
     new mob("Zombified Piglin", 20, 8, "hostile", "Nether"),

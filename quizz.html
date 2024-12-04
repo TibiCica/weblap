@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Did you know?</title>
-    <link rel="icon" type="image/x-icon" href="képek/icon.png">
+    <link rel="icon" type="image/x-icon" href="kepek/icon.png">
 </head>
 <body onload="funfact()">
     <header id="fejlec">
@@ -28,7 +28,6 @@
             </ul>
         </nav>
     </header>
-    <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php"></form>
     
     <div id="bbody">
         <div id="leftie">
@@ -37,19 +36,74 @@
         <div id="rightie">
                 <article class="general">
                     <table id="intro">
-                    <caption>From a small indie project by a single developer to one of the most influential games of all time, Minecraft has grown into a platform for creativity, education, and global connection. Whether you’re building a castle, surviving a creeper ambush, or exploring new updates, Minecraft’s story is far from over.</caption>
+                    <caption>Let's test your Minecraft knowledge, shall we?</caption>
                     <tr>
                         <td colspan="3">
                             <h1>The History of Minecraft:<h1><h2>From Humble Beginnings to Global Phenomenon</h2></td>
                     </tr>
                     <tr>
-                        <td><img src="képek/Arrow.webp" alt=""></td>
-                        <td><img src="képek/creeper.png" alt=""></td>
-                        <td><img src="képek/Arrow.webp" alt="" class="flipped"></td>
+                        <td><img src="kepek/Arrow.webp" alt=""></td>
+                        <td><img src="kepek/creeper.png" alt=""></td>
+                        <td><img src="kepek/Arrow.webp" alt="" class="flipped"></td>
                     </tr>
                 </table>
-                    
             </article>
+            <div class="general">
+                <form method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php"><h1>The Test</h1><h2></h2>
+                    <div class="general question"><h2>Q1: How much dmg does an Enderman deal?</h2><label for="scale">Atk:</label><input type="range" name="scale" id="scale" min="0" max="20" value="0" onchange="calcdmg()"><p id="endmg">0</p></div>
+                    <div class="general question"><h2>Q2: How to craft a haybale?</h2>
+                        <ul>
+                            <li><input type="radio" name="hay" id="hay0"><label for="hay0" id="hay0l">9 wheats</label></li>
+                            <li><input type="radio" name="hay" id="hay1"><label for="hay1" id="hay1l">3 adjacent wheats</label></li>
+                            <li><input type="radio" name="hay" id="hay2"><label for="hay2" id="hay2l">redstone on top of a stick</label></li>
+                            <li><input type="radio" name="hay" id="hay3"><label for="hay3" id="hay3l">brew nether warth, add sugar, then finish it with glowstone dust</label></li>
+                        </ul>
+                        
+                        
+                        
+                        </div>
+                    <div class="general question"><h2>Q3: In which year did Microsoft buy Minecraft?</h2>
+                    <input type="number" name="numupdown" id="numupdown" min="2007" max="2024" value="2020"></div>
+                    <div class="general question"><h2>Q4: What's the base character's name?</h2><label for="cname">Type in:</label><input type="text" name="cname" id="cname"></div>
+                    <div class="general question"><h2>Q5:</h2>
+                    <div class="general question" id="mobs">
+                        <select name="" id="who">
+                            <option value="0">Zombified Piglin</option>
+                            <option value="1">Husk</option>
+                            <option value="2">Zombie</option>
+                            <option value="3">Villager</option>
+                            <option value="4">Wolf</option>
+                            <option value="5">Pig</option>
+                            <option value="6">Enderman</option>
+                            <option value="7">Shulker</option>
+                            <option value="8">Slime</option>
+                            <option value="9">Silverfish</option>
+                            <option value="10">Skeleton</option>
+                            <option value="11">Hoglin</option>
+                            <option value="12">Guardian</option>
+                            <option value="13">Dolphin</option>
+                            <option value="14">Llama</option>
+                            <option value="15">Herobrine</option>
+                        </select>
+                        <div class="mob">
+                            <img src="kepek/mobs/Herobrine.webp" alt="No, you're not cheating" id="creature"><h1 id="pokemon"> Who's that Pokemon?</h1>
+                        </div></div></div>
+                    <div class="general question"><h2>Q6: What are the two versions of Minecraft?</h2>
+                        <ul>
+                            <li>
+                                <input type="checkbox" name="versions" id="Java">Java<label for=""></label></li>
+                            <li>
+                                <input type="checkbox" name="versions" id="Oracle">Oracle<label for=""></label></li>
+                            <li>
+                                <input type="checkbox" name="versions" id="Anime">Mashle<label for=""></label></li>
+                            <li>
+                                <input type="checkbox" name="versions" id="Bedrock">Bedrock<label for=""></label></li>
+                        </ul></div>
+                        <div class="general question"><h2>About you</h2><label for="color">Favorite color</label><input type="color" name="color" id="color"><br><br><label for="dt">Date of birth</label><input type="datetime" name="dt" id="dt"></div>
+                        <input type="reset" value="Reset">
+                        <input type="button" value="Check" id="chckitout" onclick="checkquizz()">
+                    <input type="submit" value="Submit">
+            </form></div>
         </div>
     </div>
     <footer></footer>
